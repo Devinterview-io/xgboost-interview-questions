@@ -426,9 +426,7 @@ In this example, `max_depth=3` is used to control the tree depth, which can help
 
 - Each prediction step in an XGBoost model is the sum of predictions from all trees. The learning rate scales the contribution of each tree, allowing the model to require fewer trees during training.
 
-$$
-\text{Prediction}_{\text{xgboost}} = \sum_{\text{Trees}}\left( \text{Learning Rate} \times \text{Individual Tree Prediction} \right)
-$$
+![equation](https://firebasestorage.googleapis.com/v0/b/dev-stack-app.appspot.com/o/xgboost%2Fxgboost9.png?alt=media&token=5f39c014-dca3-49d9-831f-89b63532453c)
 
 - Post-multiplication, the shrinkage factor reduces the influence of each tree's prediction in the final result.
 
