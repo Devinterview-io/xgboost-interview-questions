@@ -212,11 +212,15 @@ XGBoost offers several hyperparameters for controlling the regularization streng
 
 1. **L1 Regularization (```alpha``` or ```reg_alpha```)**: Encourages sparsity in feature selection by adding the sum of absolute values of the weights to the cost function.
 
-   $$ J = J_0 + \alpha \sum_{i=1}^n |w_i| $$
+$$
+J = J_0 + \alpha \sum_{i=1}^n |w_i|
+$$
 
 2. **L2 Regularization (```lambda``` or ```reg_lambda``` or ```reg_weight```)**: Also known as weight decay, it adds the sum of squares of the weights to the cost function.
 
-   $$ J = J_0 + \lambda \frac{1}{2} \sum_{i=1}^n w_i^2 $$
+$$
+J = J_0 + \lambda \frac{1}{2} \sum_{i=1}^n w_i^2
+$$
    
 3. **Max Depth (```max_depth```)**: Another form of regularization, it limits the maximum depth a tree can grow to.
 
@@ -321,15 +325,11 @@ XGBoost has a set of features that make it faster and more effective than tradit
 
 1. **Squared Loss (L2 Loss)**: Primarily used for mean target estimation in regression tasks. It measures the difference between predicted and actual values, summing up the squared differences across all instances. L2 regularization adds a penalty term based on the sum of squared model weights.
 
-$$
-L = \frac{1}{2} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 + \alpha \sum_{j=1}^{k} \omega_j^2
-$$
+![equation](https://firebasestorage.googleapis.com/v0/b/dev-stack-app.appspot.com/o/xgboost%2Fxgboost7_1.png?alt=media&token=c0bb1673-d0bc-4c80-bdc1-8d830d0b1c6e)
 
 2. **Absolute Loss (L1 Loss)**: This loss function uses the absolute difference between the predicted and actual values instead of squares.
 
-$$
-L = \sum_{i=1}^{n} |y_i - \hat{y}_i| + \alpha \sum_{j=1}^{k} |\omega_j|
-$$
+![equation](https://firebasestorage.googleapis.com/v0/b/dev-stack-app.appspot.com/o/xgboost%2Fxgboost7_2.png?alt=media&token=b99407c5-5f97-4257-944f-c55887064958)
 
 3. **Huber Loss**: A combination of L1 and L2 Loss that is less sensitive to outliers. It switches to L1 Loss if the absolute difference is above a $\delta$ threshold.
 
